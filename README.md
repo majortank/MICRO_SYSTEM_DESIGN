@@ -1,6 +1,10 @@
 # SIMULINO UNO — Arduino UNO + LCD (LM016L)
 
-![SIMULINO UNO Diagram](assets/Graphic.SVG)
+<!-- Before simulation (static demo) -->
+![Graphics.svg — Before simulation](Graphic.SVG)
+
+<!-- During simulation (running demo) -->
+![Running Simulation Graphic](Running%20Simulation%20Graphic.png)
 
 Overview
 
