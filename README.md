@@ -1,9 +1,15 @@
-# SIMULINO UNO — Arduino UNO + LCD (LM016L) — Proteus
+# SIMULINO UNO — Arduino UNO + LCD (LM016L)
 
-Brief documentation for the project that demonstrates an Arduino UNO driving
-a 16x2 character LCD (LM016L / HD44780-compatible). The sketch prints a static
-message on the first line and a seconds counter on the second line so the
-display visibly updates during simulation.
+![SIMULINO UNO Diagram](assets/Graphic.SVG)
+
+This repository demonstrates an Arduino UNO driving a 16x2 character LCD
+(LM016L / HD44780-compatible). The sketch prints a static message on the
+first line and a seconds counter on the second line so the display updates
+during simulation or on real hardware.
+
+All documentation is consolidated here in this `README.md` (no separate
+`docs/` files). The image above is loaded from `assets/Graphic.SVG` — replace
+that file with your preferred diagram (same filename) to have it display.
 
 Files
 - `sketch_mar17a.ino` — Arduino sketch used by the project.
@@ -29,12 +35,6 @@ Wiring (LCD pins to Arduino pins)
 - LCD A   -> +5V through 220Ω (backlight +)
 - LCD K   -> GND (backlight -)
 
-Proteus / Simulation Notes
-- Use a generic 16x2 LCD component (HD44780) if LM016L is not listed.
-- See `docs/PROTEUS.md` for step-by-step instructions to run the sketch in
-  Proteus (loading the compiled `.hex` into the ATmega328P or using the
-  Arduino UNO model).
-
 How to use (real hardware)
 1. Wire the LCD as shown above.
 2. Open `sketch_mar17a.ino` in the Arduino IDE.
@@ -42,12 +42,18 @@ How to use (real hardware)
 4. Upload the sketch. The LCD should show "Hello, World!" and an increasing
    seconds counter on the second line.
 
+Proteus / Simulation Notes
+- Use a generic 16x2 LCD component (HD44780) if LM016L is not listed.
+- To run in Proteus, export the compiled HEX from the Arduino IDE via
+  `Sketch > Export compiled Binary` and load that HEX into the Arduino UNO
+  or ATmega328P component's Program File property.
+
 Troubleshooting
 - Blank display: check contrast pot wiring (VO). Try adjusting the pot.
 - Garbage characters: confirm RW pin on LCD is tied to GND.
 - Backlight off: ensure A/K pins and resistor are wired correctly.
-- In Proteus, if the LCD doesn't show text, try using a different LCD
-  device (HD44780) and confirm the program `.hex`/`.elf` is loaded.
+- In Proteus, if the LCD doesn't show text, try toggling contrast or using
+  the Arduino UNO model which handles bootloader/pins more conveniently.
 
 License
 - MIT — feel free to reuse and modify. Attribution appreciated.
